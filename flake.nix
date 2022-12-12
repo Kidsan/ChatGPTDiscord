@@ -16,33 +16,33 @@
               owner = "FlorianREGAZ";
               repo = "Python-TLS-Client";
               rev = "0.1.5";
-              sha256 = "sha256-vfzbUdnHW3Nv+G7BH5xRCASgvbBwC+VwK40q+EEgNoQ="; # TODO
+              sha256 = "sha256-vfzbUdnHW3Nv+G7BH5xRCASgvbBwC+VwK40q+EEgNoQ=";
             };
         };
 
       OpenAIAuth = with pkgs.python3Packages;
         buildPythonPackage {
           pname = "OpenAIAuth";
-          version = "0.0.3.1";
+          version = "0.0.6";
           propagatedBuildInputs = [ tls-client ];
           src = pkgs.fetchFromGitHub
             {
               owner = "acheong08";
               repo = "OpenAIAuth";
-              rev = "0.0.3.1";
-              sha256 = "sha256-DdgTEpW1JZJMla/a3lQi/Bc6Yib5n+2MWjAwkJF6Zys="; # TODO
+              rev = "0.0.6";
+              sha256 = "sha256-mqLa/pTDUfgSZo//nQhy/nCjQZV1MmFIGUPoVZWP8Rs=";
             };
         };
 
       revChatGPT = with pkgs.python3Packages;
         buildPythonPackage {
           pname = "revChatGPT";
-          version = "0.0.31.5";
+          version = "0.0.38.8";
           propagatedBuildInputs = [ requests OpenAIAuth ];
           src = fetchPypi {
             pname = "revChatGPT";
-            version = "0.0.31.5";
-            sha256 = "cdce9f63c7343411f96424abfe85bea4d94c65627f27dc7d04b5eff599032e7f"; # TODO
+            version = "0.0.38.8";
+            sha256 = "sha256-x3EUS8sLWf3xjKBkza/81MEL4dLbyyie7N6j5s0PQTc=";
           };
         };
 
@@ -51,6 +51,8 @@
         requests
         discordpy
         revChatGPT
+        # asyncio
+        typing
       ]);
     in
     {
